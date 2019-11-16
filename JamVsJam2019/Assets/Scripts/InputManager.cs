@@ -27,23 +27,23 @@ public static class InputManager
     }
   
     // Buttons
-    public static bool AButton()
+    public static bool AButton(string playerNumber)
     {
-        return Input.GetButtonDown("A_Button");
+        return Input.GetButtonDown("A_Button" + playerNumber);
     }
 
     public static bool BButton(string playerNumber)
     {
-        return Input.GetButton("B_Button" + playerNumber);
+        return Input.GetButtonDown("B_Button" + playerNumber);
     }
 
-    public static bool XButton()
+    public static bool XButton(string playerNumber)
     {
-        return Input.GetButtonDown("X_Button");
+        return Input.GetButtonDown("X_Button" + playerNumber);
     }
 
-    public static bool YButton()
+    public static bool YButton(string playerNumber)
     {
-        return Input.GetButtonDown("Y_Button");
+        return Input.GetButtonDown("Y_Button" + playerNumber);
     }
 }
