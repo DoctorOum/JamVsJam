@@ -32,9 +32,9 @@ public static class InputManager
         return Input.GetButtonDown("A_Button");
     }
 
-    public static bool BButton()
+    public static bool BButton(string playerNumber)
     {
-        return Input.GetButtonDown("B_Button");
+        return Input.GetButton("B_Button" + playerNumber);
     }
 
     public static bool XButton()
