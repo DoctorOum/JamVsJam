@@ -5,11 +5,11 @@ using UnityEngine;
 public static class InputManager
 {
     // Axis
-    public static float MainHorizontal()
+    public static float MainHorizontal(string playerNumber)
     {
         float r = 0.0f;
-        r += Input.GetAxis("J_MainHorizontal");
-        r += Input.GetAxis("K_MainHorizontal");
+        r += Input.GetAxis("J_MainHorizontal" + playerNumber);
+        r += Input.GetAxis("K_MainHorizontal" + playerNumber);
         return Mathf.Clamp(r, -1.0f, 1.0f);
     }
 
@@ -21,10 +21,10 @@ public static class InputManager
         return Mathf.Clamp(r, -1.0f, 1.0f);
     }
 
-    public static Vector2 MainJoystick()
+    /*public static Vector2 MainJoystick()
     {
         return new Vector2(MainHorizontal(), MainVertical());
-    }
+    }*/
   
     // Buttons
     public static bool AButton()

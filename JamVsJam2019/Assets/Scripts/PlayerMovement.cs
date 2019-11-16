@@ -14,36 +14,35 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
-        if(playerNumber == 1 && !isMove)
+        if (InputManager.MainHorizontal(playerNumber.ToString()) < 0 && transform.position.x > 2)
+        {
+            transform.position += Vector3.left;
+        }
+        if (InputManager.MainHorizontal(playerNumber.ToString()) > 0 && transform.position.x < 8)
+        {
+            transform.position += Vector3.right;
+        }
+        /*if (playerNumber == 1 && !isMove)
         {
             if(Input.GetKey(KeyCode.A) && transform.position.x > 2)
             {
-                StartCoroutine(UpdatePosition(Vector3.left));
+                transform.position += Vector3.left;
             }
             if (Input.GetKey(KeyCode.D) && transform.position.x < 8)
             {
-                StartCoroutine(UpdatePosition(Vector3.right));
+                transform.position += Vector3.right;
             }
         }
         else if(playerNumber == 2 && !isMove)
         {
             if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > 2)
             {
-                StartCoroutine(UpdatePosition(Vector3.left));
+                transform.position += Vector3.left;
             }
             if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 8)
             {
-                StartCoroutine(UpdatePosition(Vector3.right));
+                transform.position += Vector3.right;
             }
-        }
-    }
-    IEnumerator UpdatePosition(Vector3 addPosition)
-    {
-        isMove = true;
-
-        transform.position += addPosition;
-
-        yield return new WaitForSeconds(.125f);
-        isMove = false;
+        }*/
     }
 }
