@@ -13,18 +13,18 @@ public static class InputManager
         return Mathf.Clamp(r, -1.0f, 1.0f);
     }
 
-    public static float MainVertical()
+    public static float MainVertical(string playerNumber)
     {
         float r = 0.0f;
-        r += Input.GetAxis("J_MainVertical");
-        r += Input.GetAxis("K_MainVertical");
+        r += Input.GetAxis("J_MainVertical" + playerNumber);
+        r += Input.GetAxis("K_MainVertical" + playerNumber);
         return Mathf.Clamp(r, -1.0f, 1.0f);
     }
 
-    /*public static Vector2 MainJoystick()
+    public static Vector2 MainJoystick(string playerNumber)
     {
-        return new Vector2(MainHorizontal(), MainVertical());
-    }*/
+        return new Vector2(MainHorizontal(playerNumber), MainVertical(playerNumber));
+    }
   
     // Buttons
     public static bool AButton()
