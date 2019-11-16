@@ -25,7 +25,7 @@ public class PlayerFire : MonoBehaviour
     }
     void Update()
     {
-        StartCoroutine(InputManager.BButton(playerNumber.ToString()) && !isFire && bulletCount > 0 ? Fire() : Empty());
+        StartCoroutine(InputManager.XButton(playerNumber.ToString()) && !isFire && bulletCount > 0 ? Fire() : Empty());
         StartCoroutine(bulletCount <= 0 && !isReload ? Reload() : Empty());
     }
     IEnumerator Empty() { yield return new WaitForSeconds(0); }
