@@ -232,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 4093370073323876553, guid: 8d0dd92ed2ed1d64ca61154c3f4db098, type: 3}
   shootInterval: 0.125
+  bulletCount: 10
 --- !u!50 &181251142
 Rigidbody2D:
   serializedVersion: 4
@@ -489,6 +490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 4093370073323876553, guid: 8d0dd92ed2ed1d64ca61154c3f4db098, type: 3}
   shootInterval: 0.125
+  bulletCount: 10
 --- !u!50 &1165380834
 Rigidbody2D:
   serializedVersion: 4
