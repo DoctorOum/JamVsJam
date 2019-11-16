@@ -4,19 +4,22 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Canvas Menu;
+    public Canvas Credit;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void StartGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void Credits()
+    {
+        Credit.gameObject.SetActive(true);
+        Menu.gameObject.SetActive(false);
+    }
+
+    public void EndGame()
+    {
+        Application.Quit();
     }
 }
