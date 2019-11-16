@@ -8,6 +8,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position += (InputManager.MainHorizontal(playerNumber.ToString()) < 0 && transform.position.x > 2 ? Vector3.left : InputManager.MainHorizontal(playerNumber.ToString()) > 0 && transform.position.x < 8 ? Vector3.right : Vector3.zero);
+        transform.position += (InputManager.MainHorizontal(playerNumber.ToString()) < 0 && transform.position.x > 1.6 ? Vector3.left : InputManager.MainHorizontal(playerNumber.ToString()) > 0 && transform.position.x < 8.4 ? Vector3.right : Vector3.zero) * .1f;
     }
 }
