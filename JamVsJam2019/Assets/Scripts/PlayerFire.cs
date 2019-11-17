@@ -17,7 +17,6 @@ public class PlayerFire : MonoBehaviour
         isFire = false;
         playerNumber = GetComponent<PlayerMovement>().playerNumber;
         bulletMax = bulletCount;
-        //StartCoroutine(PassiveReload());
     }
     void BulletIncrease(int count)
     {
@@ -38,12 +37,6 @@ public class PlayerFire : MonoBehaviour
         bulletCount = bulletMax;
         isFire = false;
         isReload = false;
-    }
-    IEnumerator PassiveReload()
-    {
-        BulletIncrease(bulletCount < bulletMax ? 1 : 0);
-        yield return new WaitForSeconds(1);
-        StartCoroutine(PassiveReload());
     }
     IEnumerator Fire()
     {
