@@ -11,5 +11,11 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= 1;
         healthDisplay.text = (100 * health / 25) + "%";
+        healthDisplay.gameObject.transform.localScale *= 1.1f;
+        Invoke("SizeRestore", .15f);
+    }
+    void SizeRestore()
+    {
+        healthDisplay.gameObject.transform.localScale /= 1.1f;
     }
 }
