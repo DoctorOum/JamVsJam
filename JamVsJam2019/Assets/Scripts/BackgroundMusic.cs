@@ -8,4 +8,11 @@ public class BackgroundMusic : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
     }
+    void Update()
+    {
+        if (Input.GetButtonDown("Quitty"))
+        {
+            Application.Quit();
+        }
+    }
 }
