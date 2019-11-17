@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 public class SelectorScript : MonoBehaviour
 {
     public GameObject RedShip, BlueShip, RedSword, BlueSword;
-    public bool BlueSwordOn, RedSwordOn;
+    public bool BlueSwordOn, RedSwordOn, BlueSwordChoose, RedSwordChoose;
+    public bool playerSelected1, playerSelected2;
+    bool loaded;
+    private GameObject BlueSelection, RedSelection;
+
 
     //private Vector2 CharacterPosition, OffScreen;
     private int CharacterInt1 = 1;
@@ -20,12 +24,14 @@ public class SelectorScript : MonoBehaviour
             BlueShip.gameObject.SetActive(false);
             BlueSword.gameObject.SetActive(true);
             BlueSwordOn = true;
+            BlueSwordChoose = true;
         }
         if (Input.GetAxis("J_MainHorizontal1") < 0 && BlueSwordOn == true)
         {
             BlueSword.gameObject.SetActive(false);
             BlueShip.gameObject.SetActive(true);
             BlueSwordOn = false;
+            BlueSwordChoose = false;
         }
 
         if (Input.GetAxis("J_MainHorizontal2") > 0 && RedSwordOn == false)
@@ -33,16 +39,27 @@ public class SelectorScript : MonoBehaviour
             RedShip.gameObject.SetActive(false);
             RedSword.gameObject.SetActive(true);
             RedSwordOn = true;
+            RedSwordChoose = true;
         }
         if (Input.GetAxis("J_MainHorizontal2") < 0 && RedSwordOn == true)
         {
             RedSword.gameObject.SetActive(false);
             RedShip.gameObject.SetActive(true);
             RedSwordOn = false;
+            RedSwordChoose = false;
+        }
+
+        if (!loaded && playerSelected1 == true && playerSelected2 == true)
+        {
+            loaded = true;
+            StartCoroutine(LoadYourAsyncScene());
+
         }
     }
     private void Start()
     {
+        BlueSwordChoose = false;
+        RedSwordChoose = false;
         BlueSwordOn = false;
         RedSwordOn = false;
     }
@@ -152,6 +169,32 @@ public class SelectorScript : MonoBehaviour
         }
     }
 
+    public void ChooseBlue()
+    {
+        if (BlueSwordChoose == true)
+        {
+            BlueSelection = BlueSword;
+            playerSelected1 = true;
+        }
+        else
+        {
+            BlueSelection = BlueShip;
+            playerSelected1 = true;
+        }
+    }
+    public void ChooseRed()
+    {
+        if (RedSwordChoose == true)
+        {
+            RedSelection = RedSword;
+            playerSelected2 = true;
+        }
+        else
+        {
+            RedSelection = RedShip;
+            playerSelected2 = true;
+        }
+    }
     private void ResetInt2()
     {
         if (CharacterInt2 >= 2)
@@ -162,5 +205,30 @@ public class SelectorScript : MonoBehaviour
         {
             CharacterInt2 = 2;
         }
+    }
+
+    IEnumerator LoadYourAsyncScene()
+    {
+        // Set the current Scene to be able to unload it later
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        RedSelection.transform.parent = null;
+        BlueSelection.transform.parent = null;
+
+        // The Application loads the Scene in the background at the same time as the current Scene.
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("TristanTestScene", LoadSceneMode.Additive);
+
+        // Wait until the last operation fully loads to return anything
+        while (!asyncLoad.isDone)
+        {
+            Debug.Log("Loading...");
+            yield return null;
+        }
+        Debug.Log("Loading Finished");
+        // Move the GameObject (you attach this in the Inspector) to the newly loaded Scene
+        SceneManager.MoveGameObjectToScene(RedSelection, SceneManager.GetSceneByName("TristanTestScene"));
+        SceneManager.MoveGameObjectToScene(BlueSelection, SceneManager.GetSceneByName("TristanTestScene"));
+        // Unload the previous Scene
+        SceneManager.UnloadSceneAsync(currentScene);
     }
 }
