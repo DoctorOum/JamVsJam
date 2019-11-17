@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 20418904419852707}
   - component: {fileID: 6115914043601900727}
   - component: {fileID: 3038799095929475949}
+  - component: {fileID: 4645293480731577984}
   m_Layer: 0
   m_Name: EnemyBBlue
   m_TagString: Untagged
@@ -168,3 +169,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zigZagInterval: 2
+--- !u!95 &4645293480731577984
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488630266525801665}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c53bcd56cb687d4588f6c70818a1aff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

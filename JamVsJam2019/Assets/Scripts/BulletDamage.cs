@@ -30,11 +30,15 @@ public class BulletDamage : MonoBehaviour
                     collision.GetComponent<PlayerHealth>().Damage();
                     Damage();
                 }
-                Destroy(health > 0 ? collision.gameObject : gameObject);
+                GetComponent<AudioSource>().Play();
+                GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                GetComponent<SpriteRenderer>().enabled = false;
+                Destroy(health > 0 ? collision.gameObject : gameObject, GetComponent<AudioSource>().clip.length);
             }
             else
             {
-                Destroy(gameObject);
+                GetComponent<AudioSource>().Play();
+                Destroy(gameObject, GetComponent<AudioSource>().clip.length);
             }
         }
     }
