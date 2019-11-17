@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class BackgroundMusic : MonoBehaviour
 {
-    void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
     void Update()
     {
         if (Input.GetButtonDown("Quitty"))
