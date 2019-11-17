@@ -9,12 +9,13 @@ public class EnemyShooty : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("Shoot", 3, 4);
+        InvokeRepeating("Shoot", Random.Range(1f, 2f), Random.Range(2f, 4f));
     }
     void Shoot()
     {
         GameObject test = Instantiate(bullet, transform.position, transform.rotation);
         test.GetComponent<Rigidbody2D>().velocity = Vector2.up * 8 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
         test.tag = tag;
+        GetComponent<AudioSource>().Play();
     }
 }

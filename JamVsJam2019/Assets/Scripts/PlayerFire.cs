@@ -46,6 +46,7 @@ public class PlayerFire : MonoBehaviour
         test.GetComponent<Rigidbody2D>().velocity = Vector2.up * 8 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
         test.tag = tag;
         bulletCount -= 1;
+        GetComponent<AudioSource>().Play();
 
         yield return new WaitForSeconds(shootInterval);
         isFire = false;
