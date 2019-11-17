@@ -21,6 +21,7 @@ public class PlayerSetup : MonoBehaviour
         {
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(true);
+            GetComponent<PlayerHealth>().health += 5;
         }
     }
 }
