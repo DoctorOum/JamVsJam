@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerFire : MonoBehaviour
 {
     public GameObject bullet;
+    public TMPro.TextMeshProUGUI x;
     bool isFire;
     bool isReload;
     public float shootInterval;
@@ -28,11 +29,26 @@ public class PlayerFire : MonoBehaviour
         StartCoroutine(bulletCount <= 0 && !isReload ? Reload() : Empty());
     }
     IEnumerator Empty() { yield return new WaitForSeconds(0); }
+    IEnumerator Timer(int seconds)
+    {
+        x.text = seconds.ToString();
+        yield return new WaitForSeconds(1);
+        if (seconds > 1)
+        {
+            StartCoroutine(Timer(seconds - 1));
+        }
+        else
+        {
+            x.gameObject.SetActive(false);
+        }
+    }
     IEnumerator Reload()
     {
         isFire = true;
         isReload = true;
 
+        x.gameObject.SetActive(true);
+        StartCoroutine(Timer(2));
         yield return new WaitForSeconds(2);
         bulletCount = bulletMax;
         isFire = false;
