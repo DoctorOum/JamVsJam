@@ -17,6 +17,7 @@ public class ButtonBiggening : MonoBehaviour
         if(!isBig && UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject == gameObject)
         {
             gameObject.transform.localScale *= 1.2f;
+            GetComponent<AudioSource>().Play();
             isBig = true;
         }
         if(isBig && UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject != gameObject)
