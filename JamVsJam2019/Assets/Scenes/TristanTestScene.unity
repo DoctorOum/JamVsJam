@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemies:
-  - {fileID: 4093370073323876553, guid: 8d0dd92ed2ed1d64ca61154c3f4db098, type: 3}
+  - {fileID: 5728298593415096123, guid: 7efb5d5aeb1db45479e5a2d644e5ea50, type: 3}
   - {fileID: 7362301445136462026, guid: bd9aa4c3aab58e047b81a7ffc1af7c76, type: 3}
   - {fileID: 6488630266525801665, guid: 635c1145af1f4434dbbff053baec1cb0, type: 3}
 --- !u!1 &186959545
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemies:
-  - {fileID: 4093370073323876553, guid: ec7a9ba2bf5fd8e43a8e7216a879685a, type: 3}
+  - {fileID: 1083395616000364650, guid: a5efc9f9dad3bca4dbbca8008a8de1e6, type: 3}
   - {fileID: 7690677886232485578, guid: bb1bae5106bdb514eb9dc8d708eb358b, type: 3}
   - {fileID: 1074802813498014, guid: c1eeb60d234dc094aa5565f19cf50b63, type: 3}
 --- !u!1 &1225734863
