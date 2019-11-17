@@ -38,6 +38,8 @@ public class BulletDamage : MonoBehaviour
             else
             {
                 GetComponent<AudioSource>().Play();
+                GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                GetComponent<SpriteRenderer>().enabled = false;
                 Destroy(gameObject, GetComponent<AudioSource>().clip.length);
             }
         }
