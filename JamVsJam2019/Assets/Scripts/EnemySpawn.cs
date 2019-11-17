@@ -33,9 +33,9 @@ public class EnemySpawn : MonoBehaviour
             StartCoroutine(SpawnB());
         }
     }
-    IEnumerator SpawnY()
+    IEnumerator SpawnA()
     {
-        spawningY = true;
+        spawningA = true;
 
         GameObject temp;
         temp = Instantiate(Enemies[0], transform.position + new Vector3(-2f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI)), 1.5f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI))), transform.rotation);
@@ -55,11 +55,11 @@ public class EnemySpawn : MonoBehaviour
         temp.GetComponent<Rigidbody2D>().velocity = Vector2.up * 8 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
 
         yield return new WaitForSeconds(8);
-        spawningY = false;
+        spawningA = false;
     }
-    IEnumerator SpawnA()
+    IEnumerator SpawnY()
     {
-        spawningA = true;
+        spawningY = true;
 
         GameObject temp;
         temp = Instantiate(Enemies[1], transform.position + new Vector3(-1f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI)), 1.5f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI))), transform.rotation);
@@ -79,7 +79,7 @@ public class EnemySpawn : MonoBehaviour
         temp.GetComponent<Rigidbody2D>().velocity = Vector2.up * 8 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
 
         yield return new WaitForSeconds(8);
-        spawningA = false;
+        spawningY = false;
     }
     IEnumerator SpawnB()
     {
