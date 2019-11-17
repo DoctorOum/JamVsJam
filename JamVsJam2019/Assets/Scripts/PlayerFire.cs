@@ -33,7 +33,7 @@ public class PlayerFire : MonoBehaviour
         isFire = true;
         isReload = true;
 
-        yield return new WaitForSeconds(playerNumber == 1 ? 0 : 3);
+        yield return new WaitForSeconds(2);
         bulletCount = bulletMax;
         isFire = false;
         isReload = false;
