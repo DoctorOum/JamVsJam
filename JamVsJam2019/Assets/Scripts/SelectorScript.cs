@@ -7,51 +7,34 @@ public class SelectorScript : MonoBehaviour
 {
     public GameObject RedShip, BlueShip, RedSword, BlueSword;
 
-    private Vector2 CharacterPosition, OffScreen;
-    private int CharacterInt = 1;
-    private SpriteRenderer RedShipRender, BlueShipRender, RedSwordRender, BlueSwordRender;
+    //private Vector2 CharacterPosition, OffScreen;
+    private int CharacterInt1 = 1;
+    private int CharacterInt2 = 1;
+    //private SpriteRenderer RedShipRender, BlueShipRender, RedSwordRender, BlueSwordRender;
 
     private void Awake()
     {
-        CharacterPosition = RedShip.transform.position;
-        OffScreen = BlueShip.transform.position;
-        RedShipRender = RedShip.GetComponent<SpriteRenderer>();
-        BlueShipRender = BlueShip.GetComponent<SpriteRenderer>();
-        RedSwordRender = RedSword.GetComponent<SpriteRenderer>();
-        BlueSwordRender = BlueSword.GetComponent<SpriteRenderer>();
+       //CharacterPosition = RedShip.transform.position;
+       //OffScreen = BlueShip.transform.position;
+       //RedShipRender = RedShip.GetComponent<SpriteRenderer>();
+       //BlueShipRender = BlueShip.GetComponent<SpriteRenderer>();
+       //RedSwordRender = RedSword.GetComponent<SpriteRenderer>();
+       //BlueSwordRender = BlueSword.GetComponent<SpriteRenderer>();
     }
 
-    public void NextCharacter()
+    public void NextCharacter1()
     {
-        switch(CharacterInt)
+        switch(CharacterInt1)
         {
             case 1:
-                RedShipRender.enabled = false;
-                RedShip.transform.position = OffScreen;
-                BlueShip.transform.position = CharacterPosition;
-                BlueShipRender.enabled = true;
-                CharacterInt++;
+                RedShip.gameObject.SetActive(false);
+                RedSword.gameObject.SetActive(true);
+                CharacterInt1++;
                 break;
             case 2:
-                BlueShipRender.enabled = false;
-                BlueShip.transform.position = OffScreen;
-                RedSword.transform.position = CharacterPosition;
-                RedSwordRender.enabled = true;
-                CharacterInt++;
-                break;
-            case 3:
-                RedSwordRender.enabled = false;
-                RedSword.transform.position = OffScreen;
-                BlueSword.transform.position = CharacterPosition;
-                BlueSwordRender.enabled = true;
-                CharacterInt++;
-                break;
-            case 4:
-                BlueSwordRender.enabled = false;
-                BlueSword.transform.position = OffScreen;
-                RedShip.transform.position = CharacterPosition;
-                RedShipRender.enabled = true;
-                CharacterInt++;
+                RedSword.gameObject.SetActive(false);
+                RedShip.gameObject.SetActive(true);
+                CharacterInt1++;
                 ResetInt();
                 break;
             default:
@@ -60,39 +43,21 @@ public class SelectorScript : MonoBehaviour
         }
     }
 
-    public void PreviousCharacter()
+    public void PreviousCharacter1()
     {
 
-        switch (CharacterInt)
+        switch (CharacterInt1)
         {
             case 1:
-                RedShipRender.enabled = false;
-                RedShip.transform.position = OffScreen;
-                BlueSword.transform.position = CharacterPosition;
-                BlueSwordRender.enabled = true;
-                CharacterInt--;
+                RedShip.gameObject.SetActive(true);
+                RedSword.gameObject.SetActive(false);
+                CharacterInt1--;
                 ResetInt();
                 break;
             case 2:
-                BlueShipRender.enabled = false;
-                BlueShip.transform.position = OffScreen;
-                RedShip.transform.position = CharacterPosition;
-                RedShipRender.enabled = true;
-                CharacterInt--;
-                break;
-            case 3:
-                RedSwordRender.enabled = false;
-                RedSword.transform.position = OffScreen;
-                BlueShip.transform.position = CharacterPosition;
-                BlueShipRender.enabled = true;
-                CharacterInt--;
-                break;
-            case 4:
-                BlueSwordRender.enabled = false;
-                BlueSword.transform.position = OffScreen;
-                RedSword.transform.position = CharacterPosition;
-                RedSwordRender.enabled = true;
-                CharacterInt--;
+                RedShip.gameObject.SetActive(false);
+                RedSword.gameObject.SetActive(true);
+                CharacterInt1--;
                 break;
             default:
                 ResetInt();
@@ -102,13 +67,68 @@ public class SelectorScript : MonoBehaviour
 
     private void ResetInt()
     {
-        if (CharacterInt >= 4)
+        if (CharacterInt1 >= 2)
         {
-            CharacterInt = 1;
+            CharacterInt1 = 1;
         }
         else
         {
-            CharacterInt = 4;
+            CharacterInt1 = 2;
+        }
+    }
+
+    public void NextCharacter2()
+    {
+        switch (CharacterInt2)
+        {
+            case 1:
+                BlueShip.gameObject.SetActive(false);
+                BlueSword.gameObject.SetActive(true);
+                CharacterInt2++;
+                break;
+            case 2:
+                BlueSword.gameObject.SetActive(false);
+                BlueShip.gameObject.SetActive(true);
+                CharacterInt2++;
+               ResetInt2();
+                break;
+            default:
+                ResetInt2();
+                break;
+        }
+    }
+
+    public void PreviousCharacter2()
+    {
+
+        switch (CharacterInt2)
+        {
+            case 1:
+                BlueShip.gameObject.SetActive(true);
+                BlueSword.gameObject.SetActive(false);
+                CharacterInt2--;
+                ResetInt2();
+                break;
+            case 2:
+                BlueShip.gameObject.SetActive(false);
+                BlueSword.gameObject.SetActive(true);
+                CharacterInt2--;
+                break;
+            default:
+                ResetInt2();
+                break;
+        }
+    }
+
+    private void ResetInt2()
+    {
+        if (CharacterInt2 >= 2)
+        {
+            CharacterInt2 = 1;
+        }
+        else
+        {
+            CharacterInt2 = 2;
         }
     }
 }
