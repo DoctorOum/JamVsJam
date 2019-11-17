@@ -25,6 +25,7 @@ public class SelectorScript : MonoBehaviour
             BlueSword.gameObject.SetActive(true);
             BlueSwordOn = true;
             BlueSwordChoose = true;
+
         }
         if (Input.GetAxis("J_MainHorizontal1") < 0 && BlueSwordOn == true)
         {
@@ -47,6 +48,16 @@ public class SelectorScript : MonoBehaviour
             RedShip.gameObject.SetActive(true);
             RedSwordOn = false;
             RedSwordChoose = false;
+        }
+
+        if (Input.GetButtonDown("A_Button1"))
+        {
+            ChooseBlue();
+        }
+
+        if (Input.GetButtonDown("A_Button2"))
+        {
+            ChooseRed();
         }
 
         if (!loaded && playerSelected1 == true && playerSelected2 == true)
