@@ -8,7 +8,7 @@ public class BulletDamage : MonoBehaviour
 
     void Start()
     {
-        health = Random.Range(2, 4);
+        health = Random.Range(2, 4) + health;
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
