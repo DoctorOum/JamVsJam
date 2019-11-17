@@ -19,35 +19,40 @@ public class SelectorScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetAxis("J_MainHorizontal1") > 0 && BlueSwordOn == false)
+        if (!playerSelected1)
         {
-            BlueShip.gameObject.SetActive(false);
-            BlueSword.gameObject.SetActive(true);
-            BlueSwordOn = true;
-            BlueSwordChoose = true;
+            if (Input.GetAxis("J_MainHorizontal1") > 0 && BlueSwordOn == false)
+            {
+                BlueShip.gameObject.SetActive(false);
+                BlueSword.gameObject.SetActive(true);
+                BlueSwordOn = true;
+                BlueSwordChoose = true;
 
+            }
+            else if (Input.GetAxis("J_MainHorizontal1") < 0 && BlueSwordOn == true)
+            {
+                BlueSword.gameObject.SetActive(false);
+                BlueShip.gameObject.SetActive(true);
+                BlueSwordOn = false;
+                BlueSwordChoose = false;
+            }
         }
-        if (Input.GetAxis("J_MainHorizontal1") < 0 && BlueSwordOn == true)
+        if (!playerSelected2)
         {
-            BlueSword.gameObject.SetActive(false);
-            BlueShip.gameObject.SetActive(true);
-            BlueSwordOn = false;
-            BlueSwordChoose = false;
-        }
-
-        if (Input.GetAxis("J_MainHorizontal2") > 0 && RedSwordOn == false)
-        {
-            RedShip.gameObject.SetActive(false);
-            RedSword.gameObject.SetActive(true);
-            RedSwordOn = true;
-            RedSwordChoose = true;
-        }
-        if (Input.GetAxis("J_MainHorizontal2") < 0 && RedSwordOn == true)
-        {
-            RedSword.gameObject.SetActive(false);
-            RedShip.gameObject.SetActive(true);
-            RedSwordOn = false;
-            RedSwordChoose = false;
+            if (Input.GetAxis("J_MainHorizontal2") > 0 && RedSwordOn == false)
+            {
+                RedShip.gameObject.SetActive(false);
+                RedSword.gameObject.SetActive(true);
+                RedSwordOn = true;
+                RedSwordChoose = true;
+            }
+            else if (Input.GetAxis("J_MainHorizontal2") < 0 && RedSwordOn == true)
+            {
+                RedSword.gameObject.SetActive(false);
+                RedShip.gameObject.SetActive(true);
+                RedSwordOn = false;
+                RedSwordChoose = false;
+            }
         }
 
         if (Input.GetButtonDown("A_Button1"))
@@ -98,8 +103,6 @@ public class SelectorScript : MonoBehaviour
 
     public void PreviousCharacter1()
     {
-        if (Input.GetAxis("J_MainHorizontal1") < 0)
-        {
             switch (CharacterInt1)
             {
                 case 1:
@@ -117,7 +120,6 @@ public class SelectorScript : MonoBehaviour
                     ResetInt();
                     break;
             }
-        }
     }
 
     private void ResetInt()
@@ -134,8 +136,6 @@ public class SelectorScript : MonoBehaviour
 
     public void NextCharacter2()
     {
-        if (Input.GetAxis("J_MainHorizontal2") > 0)
-        {
             switch (CharacterInt2)
             {
                 case 1:
@@ -153,13 +153,10 @@ public class SelectorScript : MonoBehaviour
                     ResetInt2();
                     break;
             }
-        }
     }
 
     public void PreviousCharacter2()
     {
-        if (Input.GetAxis("J_MainHorizontal2") < 0)
-        {
             switch (CharacterInt2)
             {
                 case 1:
@@ -177,33 +174,38 @@ public class SelectorScript : MonoBehaviour
                     ResetInt2();
                     break;
             }
-        }
     }
 
     public void ChooseBlue()
     {
-        if (BlueSwordChoose == true)
+        if (!playerSelected1)
         {
-            BlueSelection = BlueSword;
-            playerSelected1 = true;
-        }
-        else
-        {
-            BlueSelection = BlueShip;
-            playerSelected1 = true;
+            if (BlueSwordChoose == true)
+            {
+                BlueSelection = BlueSword;
+                playerSelected1 = true;
+            }
+            else
+            {
+                BlueSelection = BlueShip;
+                playerSelected1 = true;
+            }
         }
     }
     public void ChooseRed()
     {
-        if (RedSwordChoose == true)
+        if (!playerSelected2)
         {
-            RedSelection = RedSword;
-            playerSelected2 = true;
-        }
-        else
-        {
-            RedSelection = RedShip;
-            playerSelected2 = true;
+            if (RedSwordChoose == true)
+            {
+                RedSelection = RedSword;
+                playerSelected2 = true;
+            }
+            else
+            {
+                RedSelection = RedShip;
+                playerSelected2 = true;
+            }
         }
     }
     private void ResetInt2()
