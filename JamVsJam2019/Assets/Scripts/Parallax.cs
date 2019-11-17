@@ -7,15 +7,12 @@ public class Parallax : MonoBehaviour
     private float length, startpos;
     public GameObject cam;
     public float parallaxEffect;
-
-    // Start is called before the first frame update
     void Start()
     {
         startpos = transform.position.y;
         length = GetComponent<SpriteRenderer>().bounds.size.y;
+        length = 120;
     }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         float temp = (cam.transform.position.y * (1 - parallaxEffect));
@@ -23,8 +20,10 @@ public class Parallax : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, startpos + dist, transform.position.z);
 
-        if (temp > startpos + length) startpos += length;
-        else if (temp < startpos - length) startpos -= length;
+        if (Vector2.Distance(cam.transform.position, gameObject.transform.position) > 90)
+        {
+            transform.position += Vector3.up * length;
+            startpos += length;
+        }
     }
-
 }
