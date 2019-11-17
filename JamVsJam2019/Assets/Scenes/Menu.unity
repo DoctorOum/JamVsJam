@@ -197,7 +197,7 @@ MonoBehaviour:
     Sean Sarmiento * Programmer
 
 
-    Jayson Angelo * Artist
+    Jayson Angelo * Artist & Designer
 
 
     Hannah Wright * Sound Artist
@@ -478,14 +478,14 @@ RectTransform:
   m_GameObject: {fileID: 196777876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8074155, y: 2.8074155, z: 2.8074155}
+  m_LocalScale: {x: 3.016389, y: 3.016389, z: 3.016389}
   m_Children: []
   m_Father: {fileID: 1512356402}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 573, y: -158}
+  m_AnchoredPosition: {x: 557, y: -158}
   m_SizeDelta: {x: 160, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196777878
@@ -1247,15 +1247,15 @@ RectTransform:
   m_GameObject: {fileID: 563358873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.051971, y: 3.051971, z: 3.051971}
+  m_LocalScale: {x: 3.016389, y: 3.016389, z: 3.016389}
   m_Children: []
   m_Father: {fileID: 1512356402}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 571, y: 13}
-  m_SizeDelta: {x: 150, y: 35}
+  m_AnchoredPosition: {x: 557, y: 13}
+  m_SizeDelta: {x: 160, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &563358878
 MonoBehaviour:
