@@ -6,11 +6,19 @@ public class PlayerHealth : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI healthDisplay;
     public int health = 10;
-    
+    int maxHealth;
+    private void Start()
+    {
+        Invoke("hi", .4f);
+    }
+    void hi()
+    {
+        maxHealth = health;
+    }
     public void Damage()
     {
         health -= 1;
-        healthDisplay.text = (100 * health / 25) + "%";
+        healthDisplay.text = (100 * health / maxHealth) + "%";
         healthDisplay.gameObject.transform.localScale *= 1.1f;
         Invoke("SizeRestore", .15f);
     }
