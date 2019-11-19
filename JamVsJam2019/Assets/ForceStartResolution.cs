@@ -7,7 +7,7 @@ public class ForceStartResolution : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Screen.SetResolution(1600, 800, false, 60);
+        Screen.SetResolution(1800, 900, false, 60);
     }
 
     // Update is called once per frame
