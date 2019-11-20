@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerSetup : MonoBehaviour
 {
     GameObject sword, shield;
+    [HideInInspector] public bool isSword = false;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class PlayerSetup : MonoBehaviour
         {
             transform.GetChild(0).gameObject.SetActive(true);
             transform.GetChild(1).gameObject.SetActive(false);
+            isSword = true;
         }
         else
         {

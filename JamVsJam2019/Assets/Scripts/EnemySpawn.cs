@@ -65,7 +65,7 @@ public class EnemySpawn : MonoBehaviour
     {
         spawningUlt = true;
 
-        GameObject temp = Instantiate(Ult, Ult.transform.position + Vector3.right * transform.position.x, transform.rotation);
+        GameObject temp = Instantiate(Ult, Ult.transform.position + Vector3.right * (GetComponent<PlayerSetup>().isSword ? transform.position.x : 0), transform.rotation);
 
         u.gameObject.SetActive(true);
         StartCoroutine(Timer(60, u));
