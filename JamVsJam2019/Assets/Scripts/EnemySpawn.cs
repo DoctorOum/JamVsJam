@@ -5,18 +5,22 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     public GameObject[] Enemies;
+    public GameObject Ult;
     int playerNumber;
     bool spawningY;
     bool spawningA;
     bool spawningB;
-    public TMPro.TextMeshProUGUI y, a, b;
+    bool spawningUlt;
+    public TMPro.TextMeshProUGUI y, a, b, u;
 
     void Start()
     {
         spawningY = false;
         spawningA = false;
         spawningB = false;
+        spawningUlt = true;
         playerNumber = GetComponent<PlayerMovement>().playerNumber;
+        StartCoroutine(UltInit());
     }
 
     void Update()
@@ -33,6 +37,10 @@ public class EnemySpawn : MonoBehaviour
         {
             StartCoroutine(SpawnB());
         }
+        if(InputManager.RTrigger(playerNumber.ToString()) && !spawningUlt) 
+        {
+            StartCoroutine(SpawnUlt());
+        }
     }
     IEnumerator Timer(int seconds, TMPro.TextMeshProUGUI text)
     {
@@ -46,6 +54,23 @@ public class EnemySpawn : MonoBehaviour
         {
             text.gameObject.SetActive(false);
         }
+    }
+    IEnumerator UltInit()
+    {
+        u.gameObject.SetActive(true);
+        StartCoroutine(Timer(60, u));
+        yield return new WaitForSeconds(60);
+    }
+    IEnumerator SpawnUlt()
+    {
+        spawningUlt = true;
+
+        GameObject temp = Instantiate(Ult, Ult.transform.position + Vector3.right * transform.position.x, transform.rotation);
+
+        u.gameObject.SetActive(true);
+        StartCoroutine(Timer(60, u));
+        yield return new WaitForSeconds(60);
+        spawningUlt = false;
     }
     IEnumerator SpawnA()
     {
@@ -159,20 +184,20 @@ public class EnemySpawn : MonoBehaviour
         temp = Instantiate(Enemies[1], transform.position + new Vector3(1f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI)), 1.5f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI))), transform.rotation);
         temp.tag = tag;
         temp.GetComponent<Rigidbody2D>().velocity = Vector2.up * 2 * 2 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
-        temp = Instantiate(Enemies[1], transform.position + new Vector3(-1f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI)), 1.5f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI))), transform.rotation);
+        temp = Instantiate(Enemies[0], transform.position + new Vector3(-2f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI)), 1.5f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI))), transform.rotation);
         temp.tag = tag;
-        temp.GetComponent<Rigidbody2D>().velocity = Vector2.up * 2 * 2 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
-        temp = Instantiate(Enemies[1], transform.position + new Vector3(0f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI)), 1f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI))), transform.rotation);
+        temp.GetComponent<Rigidbody2D>().velocity = Vector2.up * .5f * 2 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
+        temp = Instantiate(Enemies[0], transform.position + new Vector3(-1f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI)), 1f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI))), transform.rotation);
         temp.tag = tag;
-        temp.GetComponent<Rigidbody2D>().velocity = Vector2.up * 2 * 2 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
-        temp = Instantiate(Enemies[1], transform.position + new Vector3(0f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI)), 3f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI))), transform.rotation);
+        temp.GetComponent<Rigidbody2D>().velocity = Vector2.up * .5f * 2 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
+        temp = Instantiate(Enemies[0], transform.position + new Vector3(0f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI)), 1f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI))), transform.rotation);
         temp.tag = tag;
-        temp.GetComponent<Rigidbody2D>().velocity = Vector2.up * 2 * 2 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
-        temp = Instantiate(Enemies[1], transform.position + new Vector3(0f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI)), 5f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI))), transform.rotation);
+        temp.GetComponent<Rigidbody2D>().velocity = Vector2.up * .5f * 2 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
+        temp = Instantiate(Enemies[0], transform.position + new Vector3(1f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI)), 1f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI))), transform.rotation);
         temp.tag = tag;
-        temp.GetComponent<Rigidbody2D>().velocity = Vector2.up * 2 * 2 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
-        temp = Instantiate(Enemies[1], transform.position + new Vector3(1f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI)), 1.5f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI))), transform.rotation);
+        temp.GetComponent<Rigidbody2D>().velocity = Vector2.up * .5f * 2 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
+        temp = Instantiate(Enemies[0], transform.position + new Vector3(2f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI)), 1.5f * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI))), transform.rotation);
         temp.tag = tag;
-        temp.GetComponent<Rigidbody2D>().velocity = Vector2.up * 2 * 2 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
+        temp.GetComponent<Rigidbody2D>().velocity = Vector2.up * .5f * 2 * -Mathf.Round(Mathf.Cos(playerNumber * Mathf.PI));
     }
 }

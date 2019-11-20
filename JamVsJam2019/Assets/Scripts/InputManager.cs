@@ -46,4 +46,9 @@ public static class InputManager
     {
         return Input.GetButtonDown("Y_Button" + playerNumber);
     }
+
+    public static bool RTrigger(string playerNumber)
+    {
+        return Input.GetButtonDown("RT_Button" + playerNumber);
+    }
 }
