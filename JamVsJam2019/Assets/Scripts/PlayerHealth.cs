@@ -11,6 +11,13 @@ public class PlayerHealth : MonoBehaviour
     {
         Invoke("hi", .4f);
     }
+    void Update()
+    {
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     void hi()
     {
         maxHealth = health;
