@@ -180,7 +180,7 @@ public class SelectorScript : MonoBehaviour
     {
         if (!playerSelected1)
         {
-            if (BlueSwordChoose == true)
+            if (BlueSword.activeInHierarchy)
             {
                 BlueSelection = BlueSword;
                 playerSelected1 = true;
@@ -196,7 +196,7 @@ public class SelectorScript : MonoBehaviour
     {
         if (!playerSelected2)
         {
-            if (RedSwordChoose == true)
+            if (RedSword.activeInHierarchy)
             {
                 RedSelection = RedSword;
                 playerSelected2 = true;
