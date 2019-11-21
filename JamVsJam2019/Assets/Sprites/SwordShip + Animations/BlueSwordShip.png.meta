@@ -163,8 +163,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,7 +172,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02fda771776cf4e418b65d57859dbd63
+      spriteID: 0dfdd97da04746e4f973360b57b2c743
       internalID: -3259060563274106260
       vertices: []
       indices: 
@@ -182,10 +182,10 @@ TextureImporter:
       name: BlueSwordShip_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 64
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,7 +193,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c41ac6ed17b89b478419efdce29cdb4
+      spriteID: b673dd0681923a54a85fe93ee606f1a8
       internalID: -1721150818531272892
       vertices: []
       indices: 
@@ -203,10 +203,10 @@ TextureImporter:
       name: BlueSwordShip_2
       rect:
         serializedVersion: 2
-        x: 66
+        x: 128
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,7 +214,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4455f693a9abab48b35a0b3707be3fd
+      spriteID: 1812f31b82019434ea1ebca2e4d74edc
       internalID: 6288240445572532274
       vertices: []
       indices: 
@@ -224,10 +224,10 @@ TextureImporter:
       name: BlueSwordShip_3
       rect:
         serializedVersion: 2
-        x: 99
+        x: 192
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,7 +235,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 237d8f2ddd24da24483ad9d94f29b463
+      spriteID: 2501752044984db4a9fafeea7d9aec24
       internalID: 40034851962132263
       vertices: []
       indices: 
@@ -245,10 +245,10 @@ TextureImporter:
       name: BlueSwordShip_4
       rect:
         serializedVersion: 2
-        x: 132
+        x: 256
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,7 +256,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f024693fc0c1f754486d755125ea30d4
+      spriteID: 3c7f986dfada0414296f6eae3dd0dbea
       internalID: -5998129373411022402
       vertices: []
       indices: 
@@ -266,10 +266,10 @@ TextureImporter:
       name: BlueSwordShip_5
       rect:
         serializedVersion: 2
-        x: 165
+        x: 320
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,7 +277,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc0630552b2397945a6e6c5625e61677
+      spriteID: c7d87e05dea89f1409102b65d99c9630
       internalID: -4336410055018218592
       vertices: []
       indices: 
@@ -287,10 +287,10 @@ TextureImporter:
       name: BlueSwordShip_6
       rect:
         serializedVersion: 2
-        x: 198
+        x: 384
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,7 +298,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 157078230555d9d48825c6559a9f7d24
+      spriteID: 1de37911401d4f9448e46363d0ecc2a7
       internalID: -7474290958947812729
       vertices: []
       indices: 
@@ -308,10 +308,10 @@ TextureImporter:
       name: BlueSwordShip_7
       rect:
         serializedVersion: 2
-        x: 231
+        x: 448
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,7 +319,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d2ec78372270cb4394f03d1a3ca0b47
+      spriteID: 4edaf94b3dffcd047adbc0b8aa850697
       internalID: 2248398597682192571
       vertices: []
       indices: 
@@ -329,10 +329,10 @@ TextureImporter:
       name: BlueSwordShip_8
       rect:
         serializedVersion: 2
-        x: 264
+        x: 512
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,7 +340,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2397e9d9f117c27428bfab4ddb2f7026
+      spriteID: 0a92f62a9eca4784688226d320867874
       internalID: -5027648724142031634
       vertices: []
       indices: 
@@ -350,10 +350,10 @@ TextureImporter:
       name: BlueSwordShip_9
       rect:
         serializedVersion: 2
-        x: 297
+        x: 576
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,7 +361,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f877840b91065c4fbdb5e578cf86d4e
+      spriteID: 68852f1e5b6977b488499b036482c73c
       internalID: 1348079481868836549
       vertices: []
       indices: 
@@ -371,10 +371,10 @@ TextureImporter:
       name: BlueSwordShip_10
       rect:
         serializedVersion: 2
-        x: 330
+        x: 640
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,7 +382,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 137e5cd5ee657a64ba8f45fd23e2551b
+      spriteID: 03193d6c791ac9e4294765f2fa15c155
       internalID: -1733665937052456876
       vertices: []
       indices: 
@@ -392,10 +392,10 @@ TextureImporter:
       name: BlueSwordShip_11
       rect:
         serializedVersion: 2
-        x: 363
+        x: 704
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,7 +403,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93bd7e11c384abf4a9eae3e3bfcad0c9
+      spriteID: 1ccee5de7221a2c40baba7a184e2f271
       internalID: 710072923589679431
       vertices: []
       indices: 
@@ -413,10 +413,10 @@ TextureImporter:
       name: BlueSwordShip_12
       rect:
         serializedVersion: 2
-        x: 396
+        x: 768
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,7 +424,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30f875262268eaf489c217d56b5bc759
+      spriteID: a857614b272367d448863ea17c74183c
       internalID: 6100940408804837794
       vertices: []
       indices: 
@@ -434,10 +434,10 @@ TextureImporter:
       name: BlueSwordShip_13
       rect:
         serializedVersion: 2
-        x: 429
+        x: 832
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,7 +445,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 401b58372f2152a4c9f1b0882b824c25
+      spriteID: 180f1c45a657cd24f8dcc465d8a3672f
       internalID: 972563446111592221
       vertices: []
       indices: 
@@ -455,10 +455,10 @@ TextureImporter:
       name: BlueSwordShip_14
       rect:
         serializedVersion: 2
-        x: 462
+        x: 896
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -466,7 +466,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f8fc21f378004843a5042314d68ece6
+      spriteID: b9181857525e25b498eb0d1b78e5f10a
       internalID: 4531072434008329948
       vertices: []
       indices: 
@@ -476,10 +476,10 @@ TextureImporter:
       name: BlueSwordShip_15
       rect:
         serializedVersion: 2
-        x: 495
+        x: 960
         y: 0
-        width: 33
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -487,7 +487,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4d65a9f9b237cc428fe513b8cfdbe2f
+      spriteID: 383cbe50be05b7e42836115ec029b153
       internalID: -5283055724908710906
       vertices: []
       indices: 
