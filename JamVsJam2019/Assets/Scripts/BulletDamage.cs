@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
-    public int health;
+    [HideInInspector] public int health;
 
     void Start()
     {

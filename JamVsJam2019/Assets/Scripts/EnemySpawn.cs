@@ -59,8 +59,8 @@ public class EnemySpawn : MonoBehaviour
     IEnumerator UltInit()
     {
         u.gameObject.SetActive(true);
-        StartCoroutine(Timer(5, u));
-        yield return new WaitForSeconds(5);
+        StartCoroutine(Timer(60, u));
+        yield return new WaitForSeconds(60);
         spawningUlt = false;
     }
     IEnumerator SpawnUlt()
