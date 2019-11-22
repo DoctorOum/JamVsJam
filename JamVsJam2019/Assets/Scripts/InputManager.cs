@@ -49,6 +49,6 @@ public static class InputManager
 
     public static bool RTrigger(string playerNumber)
     {
-        return Input.GetButtonDown("RT_Button" + playerNumber);
+        return (Input.GetAxis("RT_Button" + playerNumber) > 0f ? true : false);
     }
 }

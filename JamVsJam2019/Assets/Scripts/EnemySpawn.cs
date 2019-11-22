@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     public GameObject[] Enemies;
-    public GameObject Ult;
+    public GameObject ultSword;
+    public GameObject ultShield;
     int playerNumber;
     bool spawningY;
     bool spawningA;
@@ -58,15 +59,18 @@ public class EnemySpawn : MonoBehaviour
     IEnumerator UltInit()
     {
         u.gameObject.SetActive(true);
-        StartCoroutine(Timer(60, u));
-        yield return new WaitForSeconds(60);
+        StartCoroutine(Timer(5, u));
+        yield return new WaitForSeconds(5);
+        spawningUlt = false;
     }
     IEnumerator SpawnUlt()
     {
         spawningUlt = true;
 
-        GameObject temp = Instantiate(Ult, Ult.transform.position + Vector3.right * (GetComponent<PlayerSetup>().isSword ? transform.position.x : 0), transform.rotation);
-
+        GameObject temp = Instantiate(gameObject.GetComponent<PlayerSetup>().isSword ? ultSword : ultShield, (gameObject.GetComponent<PlayerSetup>().isSword ? ultSword.transform.position : ultShield.transform.position) + Vector3.right * (gameObject.GetComponent<PlayerSetup>().isSword ? transform.position.x : 0), transform.rotation);
+        temp.tag = tag;
+        temp.GetComponent<UltSword>().isSword = gameObject.GetComponent<PlayerSetup>().isSword;
+        temp.GetComponent<UltSword>().player = gameObject;
         u.gameObject.SetActive(true);
         StartCoroutine(Timer(60, u));
         yield return new WaitForSeconds(60);

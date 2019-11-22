@@ -25,7 +25,6 @@ public class PlayerHealth : MonoBehaviour
     public void Damage()
     {
         health -= 1;
-        Handheld.Vibrate();
         healthDisplay.text = (100 * health / maxHealth) + "%";
         healthDisplay.gameObject.transform.localScale *= 1.15f;
         Invoke("SizeRestore", .15f);
